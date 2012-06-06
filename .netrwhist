@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/huangkun/celtics/spurs'
-let g:netrw_dirhist_2='/home/huangkun/celtics/krugle/src'
-let g:netrw_dirhist_3='/home/huangkun/celtics/magics_pyKun'
-let g:netrw_dirhist_4='/home/huangkun/celtics/krugle/src'
-let g:netrw_dirhist_5='/home/huangkun/celtics/django_colorschemes.vim/colors'
-let g:netrw_dirhist_6='/home/huangkun/celtics/krugle/src/templates/project'
-let g:netrw_dirhist_7='/home/huangkun/celtics/magics_pyKun'
