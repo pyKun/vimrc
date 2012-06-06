@@ -21,6 +21,7 @@ filetype plugin on
 
 color vibrantink
 color vividchalk
+color badwolf
 
 """"""""""""""""""
 "NERDTree setting
