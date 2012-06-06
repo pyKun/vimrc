@@ -14,6 +14,11 @@ set softtabstop=4
 set cindent
 set autoindent
 
+""""""""""""
+"ignore case
+""""""""""""
+set ic
+
 call pathogen#runtime_append_all_bundles()
 
 filetype on
