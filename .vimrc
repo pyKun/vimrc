@@ -87,7 +87,19 @@ vnoremap <silent> # :<C-U>
 au FileType javascript call JavaScriptFold()
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
+""""""""""""""""""
+"For Onmi settings
+""""""""""""""""""
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+"""""""""""""""""""""""
+"neocomplcache settings
+"""""""""""""""""""""""
+let g:neocomplcache_enable_at_startup = 1
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
