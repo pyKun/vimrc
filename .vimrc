@@ -23,6 +23,7 @@ call pathogen#runtime_append_all_bundles()
 
 filetype on
 filetype plugin on
+filetype plugin indent on
 
 color vibrantink
 color vividchalk
@@ -82,3 +83,6 @@ vnoremap <silent> # :<C-U>
   \gvy?<C-R><C-R>=substitute(
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+au FileType javascript call JavaScriptFold()
+autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
