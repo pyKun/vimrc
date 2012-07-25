@@ -84,7 +84,7 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-au FileType javascript call JavaScriptFold()
+"au FileType javascript call JavaScriptFold()
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 """"""""""""""""""
