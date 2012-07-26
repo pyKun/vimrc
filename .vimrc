@@ -6,6 +6,7 @@ set background=dark
 set ls=2
 set hlsearch
 set incsearch
+set fileencodings=utf8,gbk,latin1
 
 set expandtab
 set tabstop=4
