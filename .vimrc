@@ -1,6 +1,6 @@
-""""""""""""""""
+"""""""""""""""
 "common setting
-""""""""""""""""
+"""""""""""""""
 set number
 set background=dark
 set ls=2
@@ -14,6 +14,7 @@ set shiftwidth=4
 set softtabstop=4
 set cindent
 set autoindent
+
 
 """"""""""""
 "ignore case
@@ -29,6 +30,7 @@ filetype plugin indent on
 color vibrantink
 color vividchalk
 color badwolf
+
 
 """"""""""""""""""
 "NERDTree setting
@@ -54,11 +56,13 @@ let NERDTreeStatusline = "%{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():'
 let NERDTreeWinPos = "left"		" Tells the script where to put the NERD tree window
 let NERDTreeWinSize = 21		" Sets the window size when the NERD tree is opened.
 
+
 """"""""""""""""
 "remove space and empty-line pre writing
 """"""""""""""""
 autocmd BufWritePre * silent! %s/\s\+$//
 autocmd BufWritePre * silent! %s/\(\s*\n\)\+\%$//
+
 
 """"""""""""""""
 "mapping
@@ -69,6 +73,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 map <C-p> "+p
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 ""Search for selected text, forwards or backwards.
@@ -88,6 +93,7 @@ vnoremap <silent> # :<C-U>
 "au FileType javascript call JavaScriptFold()
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
+
 """"""""""""""""""
 "For Onmi settings
 """"""""""""""""""
@@ -95,6 +101,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 
 """""""""""""""""""""""
 "neocomplcache settings
@@ -104,3 +111,40 @@ imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Add header for *.py *.sh *.css *.js
+"Doc: http://vim.wikia.com/wiki/Insert_current_date_or_time
+"Doc: http://www.thegeekstuff.com/2008/12/vi-and-vim-autocommand-3-steps-to-add-custom-header-to-your-file/
+"TODO: refine this....
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! AppendPyHeader()
+    call append(0, '#!/usr/bin/env python')
+    call append(1, '#-*- coding:utf-8 -*-')
+    call append(2, '# Author: Kun Huang <academicgareth@gmail.com>')
+    call append(3, '# Created Time: '.strftime("%m\/%d\/%y %H:%M:%S (%Z)"))
+    call append(4, '# Modified Time: '.strftime("%m\/%d\/%y %H:%M:%S (%Z)"))
+endfunction
+autocmd BufNewFile *.py call AppendPyHeader()
+autocmd Bufwritepre,filewritepre *.py exe "1," . 5 . "g/Modified Time:.*/s/Modified Time:.*/Modified Time: " .strftime("%m\\\/%d\\\/%y %H:%M:%S (%Z)")
+
+function! AppendCSSHeader()
+    call append(0, '/*')
+    call append(1, 'Author: Kun Huang <academicgareth@gmail.com>')
+    call append(2, 'Created Time: '.strftime("%m\/%d\/%y %H:%M:%S (%Z)"))
+    call append(3, 'Modified Time: '.strftime("%m\/%d\/%y %H:%M:%S (%Z)"))
+    call append(4, '*/')
+endfunction
+autocmd BufNewFile *.css call AppendCSSHeader()
+autocmd Bufwritepre,filewritepre *.css exe "1," . 5 . "g/Modified Time:.*/s/Modified Time:.*/Modified Time: " .strftime("%m\\\/%d\\\/%y %H:%M:%S (%Z)")
+
+function! AppendJsHeader()
+    call append(0, '/*')
+    call append(1, 'Author: Kun Huang <academicgareth@gmail.com>')
+    call append(2, 'Created Time: '.strftime("%m\/%d\/%y %H:%M:%S (%Z)"))
+    call append(3, 'Modified Time: '.strftime("%m\/%d\/%y %H:%M:%S (%Z)"))
+    call append(4, '*/')
+endfunction
+autocmd BufNewFile *.js call AppendJsHeader()
+autocmd Bufwritepre,filewritepre *.js exe "1," . 5 . "g/Modified Time:.*/s/Modified Time:.*/Modified Time: " .strftime("%m\\\/%d\\\/%y %H:%M:%S (%Z)")
