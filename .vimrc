@@ -157,3 +157,15 @@ function! AppendShHeader()
 endfunction
 autocmd BufNewFile *.sh call AppendShHeader()
 autocmd Bufwritepre,filewritepre *.sh exe "1," . 4 . "g/Modified Time:.*/s/Modified Time:.*/Modified Time: " .strftime("%m\\\/%d\\\/%y %H:%M:%S (%Z)")
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Add folding for *.html
+"Doc: http://vim.wikia.com/wiki/Use_folds_in_your_program
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! FoldHtml()
+    set foldmethod=indent
+    exe "normal zR"
+    map f za
+endfunction
+autocmd Filetype html call FoldHtml()
