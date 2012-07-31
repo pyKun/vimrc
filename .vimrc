@@ -148,3 +148,12 @@ function! AppendJsHeader()
 endfunction
 autocmd BufNewFile *.js call AppendJsHeader()
 autocmd Bufwritepre,filewritepre *.js exe "1," . 5 . "g/Modified Time:.*/s/Modified Time:.*/Modified Time: " .strftime("%m\\\/%d\\\/%y %H:%M:%S (%Z)")
+
+function! AppendShHeader()
+    call append(0, '#!/bin/bash')
+    call append(1, '# Author: Kun Huang <academicgareth@gmail.com>')
+    call append(2, '# Created Time: '.strftime("%m\/%d\/%y %H:%M:%S (%Z)"))
+    call append(3, '# Modified Time: '.strftime("%m\/%d\/%y %H:%M:%S (%Z)"))
+endfunction
+autocmd BufNewFile *.sh call AppendShHeader()
+autocmd Bufwritepre,filewritepre *.sh exe "1," . 4 . "g/Modified Time:.*/s/Modified Time:.*/Modified Time: " .strftime("%m\\\/%d\\\/%y %H:%M:%S (%Z)")
