@@ -91,7 +91,7 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 "au FileType javascript call JavaScriptFold()
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+"autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 
 """"""""""""""""""
