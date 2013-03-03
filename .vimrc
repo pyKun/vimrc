@@ -23,6 +23,7 @@ set tags=/home/huangkun/.vim/tags/tags
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_width = 37
 
 """"""""""""
 "ignore case
