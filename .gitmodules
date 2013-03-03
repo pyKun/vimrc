@@ -13,3 +13,6 @@
 [submodule "bundle/neocomplcache-snippets-complete"]
 	path = bundle/neocomplcache-snippets-complete
 	url = https://github.com/Shougo/neocomplcache-snippets-complete.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
