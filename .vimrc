@@ -15,11 +15,13 @@ set softtabstop=4
 set cindent
 set autoindent
 
+set cc=79
+
 """""""""""
 "ctags
 "http://stackoverflow.com/questions/563616/vim-and-ctags-tips-and-tricks
 """""""""""
-set tags=/home/huangkun/.vim/tags/tags
+set tags=~/.vim/tags/tags
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F4> :TagbarToggle<CR>
