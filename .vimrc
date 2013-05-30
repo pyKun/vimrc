@@ -16,6 +16,8 @@ set cindent
 set autoindent
 
 set cc=79
+set cursorline
+set cursorcolumn
 
 """""""""""
 "ctags
