@@ -40,9 +40,15 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
-color vibrantink
-color vividchalk
-color badwolf
+call pathogen#infect()
+filetype plugin indent on
+syntax enable
+set background=dark
+"set t_Co=16
+let g:solarized_termcolors=256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
 
 
 """"""""""""""""""
