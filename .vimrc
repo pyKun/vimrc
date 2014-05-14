@@ -7,6 +7,7 @@ set ls=2
 set hlsearch
 set incsearch
 set fileencodings=utf8,gbk,latin1
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
 set expandtab
 set tabstop=4
