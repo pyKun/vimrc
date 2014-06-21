@@ -1,0 +1,11 @@
+#!/bin/bash
+# Author: Kun Huang <academicgareth@gmail.com>
+
+# some prepare for xcode
+xcode-select --install
+sudo xcode-select -switch /Library/Developer/CommandLineTools
+
+# use these flag
+# ref[0] http://kaspermunck.github.io/2014/03/fixing-clang-error/
+# ref[1] http://bruteforce.gr/bypassing-clang-error-unknown-argument.html
+ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip do XXX
