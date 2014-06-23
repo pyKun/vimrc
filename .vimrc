@@ -197,3 +197,9 @@ function! AppendShHeader()
     call append(1, '# Author: Kun Huang <academicgareth@gmail.com>')
 endfunction
 autocmd BufNewFile *.sh call AppendShHeader()
+
+let g:vimwiki_list = [{'path': '~/.vimwiki/blog',
+            \'path_html': '~/.vimwiki/blog_html',
+            \'auto_export': 1,
+            \'css_name': 'static/md.css',
+            \'html_header': 'static/header.tpl'}]
