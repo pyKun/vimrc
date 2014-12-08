@@ -240,3 +240,5 @@ fu! PythonFoldUtils(lum)
 endf
 set foldexpr=PythonFoldUtils(v:lnum)
 set foldmethod=expr
+nnoremap <Space> za
+" TODO python files only
