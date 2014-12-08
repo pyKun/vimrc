@@ -203,3 +203,26 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/blog',
             \'auto_export': 1,
             \'css_name': 'static/md.css',
             \'html_header': 'static/header.tpl'}]
+
+set rtp+=/usr/local/opt/go/libexec/misc/vim
+
+fu! PythonFoldUtils(lum)
+    let line_content = getline(a:lum)
+    let first_word = split(line_content)[0]
+    let first_char = line_content[0]
+
+    if a:lum <= 200
+        " fold license
+        if a:lum == 1 && first_char == '#'
+            return 1
+        endif
+        if a:lum >1 && first_char == '#'
+            return '='
+        endif
+        " fold python import statements
+        if first_word == 'from' || first_word == 'import'
+            return 1
+        endif
+endf
+set foldexpr=PythonFoldUtils(v:lnum)
+set foldmethod=expr
