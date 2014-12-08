@@ -211,7 +211,7 @@ fu! PythonFoldUtils(lum)
     let first_word = split(line_content)[0]
     let first_char = line_content[0]
 
-    if a:lum <= 200
+    if a:lum <= 300
         " fold license
         if a:lum == 1 && first_char == '#'
             return 1
@@ -221,6 +221,20 @@ fu! PythonFoldUtils(lum)
         endif
         " fold python import statements
         if first_word == 'from' || first_word == 'import'
+            return 1
+        endif
+        " # fold *_opts definition
+        if match(line_content, "_opts") != -1
+            return 1
+        endif
+        if line_content[0:3] == '    '
+            return '='
+        endif
+        if line_content[-1] == ']'
+            return 1
+        endif
+        " fold CONF....
+        if line_content[0:3] == 'CONF'
             return 1
         endif
 endf
