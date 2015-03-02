@@ -9,3 +9,4 @@ git config --global color.branch auto
 git config --global color.ui auto
 git config --global difftool.prompt false
 git config --global core.editor vim
+git config --global --add gitreview.username "academicgareth"
