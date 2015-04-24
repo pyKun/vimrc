@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author: Kun Huang <academicgareth@gmail.com>
-
+#
 git config --global user.name "Kun Huang"
 git config --global user.email "gareth@openstacker.org"
 git config --global color.diff auto
