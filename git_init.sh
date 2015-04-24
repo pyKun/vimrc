@@ -1,5 +1,7 @@
 #!/bin/bash
 # Author: Kun Huang <academicgareth@gmail.com>
+#
+#the 2 time to refresh the file
 
 git config --global user.name "Kun Huang"
 git config --global user.email "gareth@openstacker.org"
