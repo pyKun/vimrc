@@ -10,3 +10,4 @@ git config --global color.ui auto
 git config --global difftool.prompt false
 git config --global core.editor vim
 git config --global --add gitreview.username "academicgareth"
+git config --global --add gitreview.scheme "https"
