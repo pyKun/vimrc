@@ -11,3 +11,4 @@ git config --global difftool.prompt false
 git config --global core.editor vim
 git config --global --add gitreview.username "academicgareth"
 git config --global --add gitreview.scheme "https"
+git config --global --add gitreview.port "443"
