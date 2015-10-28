@@ -48,7 +48,6 @@ sys.path.insert(0, scriptdir)
 
 import ast
 from pyflakes import checker, messages
-from operator import attrgetter
 import re
 
 class loc(object):
@@ -118,7 +117,7 @@ def check(buffer):
 
         checker._MAGIC_GLOBALS = old_globals
 
-        w.messages.sort(key = attrgetter('lineno'))
+        w.messages.sort(key = lambda x: getattr(x, 'lineno'))
         return w.messages
 
 
@@ -225,20 +224,20 @@ if !exists("*s:RunPyflakes")
         else
             let b:cleared = 1
         endif
-        
+
         let b:matched = []
         let b:matchedlines = {}
 
         let b:qf_list = []
         let b:qf_window_count = -1
-        
+
         python << EOF
 for w in check(vim.current.buffer):
     vim.command('let s:matchDict = {}')
     vim.command("let s:matchDict['lineNum'] = " + str(w.lineno))
     vim.command("let s:matchDict['message'] = '%s'" % vim_quote(w.message % w.message_args))
     vim.command("let b:matchedlines[" + str(w.lineno) + "] = s:matchDict")
-    
+
     vim.command("let l:qf_item = {}")
     vim.command("let l:qf_item.bufnr = bufnr('%')")
     vim.command("let l:qf_item.filename = expand('%')")
@@ -318,4 +317,3 @@ if !exists('*s:ClearPyflakes')
         let b:cleared = 1
     endfunction
 endif
-

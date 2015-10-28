@@ -2,7 +2,6 @@
 "common setting
 """""""""""""""
 set number
-set background=dark
 set ls=2
 set hlsearch
 set incsearch
@@ -19,6 +18,7 @@ set autoindent
 set cc=79
 set cursorline
 set cursorcolumn
+set t_Co=256
 
 """""""""""
 "ctags
@@ -61,11 +61,11 @@ call pathogen#infect()
 filetype plugin indent on
 syntax enable
 set background=dark
-"set t_Co=16
 let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 colorscheme solarized
+
 
 
 """"""""""""""""""
