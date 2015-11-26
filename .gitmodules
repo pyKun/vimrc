@@ -1,15 +1,15 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/MatchTag"]
 	path = bundle/MatchTag
 	url = https://github.com/gregsexton/MatchTag.git
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
-	url = git://github.com/mattn/zencoding-vim.git
+	url = https://github.com/mattn/zencoding-vim.git
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
-	url = git://github.com/Shougo/neocomplcache.git
+	url = https://github.com/Shougo/neocomplcache.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
@@ -18,4 +18,4 @@
 	url = https://github.com/Shougo/neosnippet.vim.git
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
-	url = git://github.com/vim-scripts/vimwiki.git
+	url = https://github.com/vim-scripts/vimwiki.git
