@@ -10,4 +10,4 @@ Installation
     cd ~/.vim/
     git submodule init
     git submodule update
-    sudo apt-get install exuberant-ctags 
+    sudo apt-get install exuberant-ctags # ctags-etags in fedora
