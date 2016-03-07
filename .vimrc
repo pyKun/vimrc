@@ -240,7 +240,12 @@ fu! PythonFoldUtils(lum)
             return 1
         endif
 endf
+
+""" Python Floder utils
 set foldexpr=PythonFoldUtils(v:lnum)
 set foldmethod=expr
 nnoremap <Space> za
 " TODO python files only
+
+""" cscope settings
+nmap <F5> :cs find g <C-R>=expand("<cword>")<CR><CR>
