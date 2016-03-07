@@ -20,6 +20,8 @@ set cursorline
 set cursorcolumn
 set t_Co=256
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 """""""""""
 "ctags
 "http://stackoverflow.com/questions/563616/vim-and-ctags-tips-and-tricks
